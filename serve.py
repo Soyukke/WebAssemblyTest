@@ -1,6 +1,7 @@
 import http.server
 import socketserver
 
+# ディレクトリ構造をそのまま公開する
 Handler = http.server.SimpleHTTPRequestHandler
 Handler.extensions_map['.wasm'] = 'application/wasm'
 with socketserver.TCPServer(("", 8080), Handler) as httpd:
